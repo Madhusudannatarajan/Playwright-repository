@@ -1,0 +1,18 @@
+const {test, expect} =require("@playwright/test"); //import
+
+test.only("My first code", async({browser})=>{
+const Context = await browser.newContext();
+
+const page = await Context.newPage();
+
+await page.goto("https://www.instagram.com/?hl=en")
+console.log(await page.title());
+await page.locator('#_R_ojadeslcldcpbn6b5ipamH1_').fill("Maddy");
+await page.locator("[type='password']").fill("md1234");
+await page.locator('div[aria-label="Log In"]').click();
+	
+
+Interview question
+
+Can we launch the url without browser fixture
+ans : Yes we can do it with page fixture
