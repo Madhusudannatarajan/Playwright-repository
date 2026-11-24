@@ -83,6 +83,7 @@ test("Revision", async ({ page }) => {
 
     //click order history
     await page.locator("label[routerlink*='myorders']").click();
+
     await page.locator("tbody").waitFor();
 
     const rows = page.locator("tbody tr");
@@ -92,10 +93,10 @@ test("Revision", async ({ page }) => {
     const rowcount = page.rows.count();
 
     //iteration
-    for(let i=0;i<rowcount;i++){
+    for (let i = 0; i < rowcount; i++) {
         const roworder = await rowcount.nth(i).textContent();//6b0466a5f1e24e33a3c486f7
-        
-        if(oderid.includes(roworder)){
+
+        if (oderid.includes(roworder)) {
             //this is to click the view button
             await rows().locator("button").first.click();
 

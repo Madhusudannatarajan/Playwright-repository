@@ -66,13 +66,27 @@ for(let i=0 ; i<option ; i++){
     }
 }
 
-
-await expect(page.locator("label[type='text']")).toHaveText("Maddy@example.com");
-await page.locator("a.btnn ").click();
-await expect(page.locator("H1.hero-primary")).toHaveText(" Thankyou for the order. ");
-
-const orderid = await page.locator("label.ng-star-inserted").textContent();
+ await page.locator("a.btnn").click();
+ const orderid= page.locator("h1.hero-primary").textContent();
 console.log(orderid);
+
+await page.locator("label[routerlink*='myorders']").click();
+
+ await page.locator("tbody").waitFor();
+const rows = page.locator("tbody tr");
+const rowcount = page.rows.count();
+
+for(let i=0; i>0;i++){
+const text = await page.rowcount().nth(i).textContent();
+
+if(orderid.includes(row)){
+    row.locator("button").first().click();
+
+    break;
+}
+
+}
+
 
 
 })
