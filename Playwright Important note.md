@@ -132,3 +132,21 @@ need to fetch Rows and table and click view button
 
 **includes()** Method
 
+
+
+**Day17-playwirght inbuild locator**
+
+**1.getBylabel**
+
+**2.getByPlaceholder**
+
+**3.getByRole**
+
+**4.getBytext(“text”).is visible**
+
+
+
+
+
+**Day18-**
+
